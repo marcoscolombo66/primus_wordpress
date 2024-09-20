@@ -1,0 +1,40 @@
+# BEGIN WP Hide & Security Enhancer
+<IfModule mod_rewrite.c> 
+RewriteEngine On 
+RewriteBase /test/ 
+#WriteCheckString:1667230669_3768
+RewriteRule ^rewrite_test_1667230669_3768/? /test/wp-content/plugins/wp-hide-security-enhancer/include/rewrite-confirm.php [L,QSA]
+RewriteRule ^rewrite_test_static_file_1667230669_3768/? /test/wp-content/plugins/wp-hide-security-enhancer/composer.json [L,QSA]
+</IfModule> 
+<IfModule mod_headers.c>
+        Header set X-Content-Type-Options "nosniff"
+</IfModule>
+# END WP Hide & Security Enhancer
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /test/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /test/index.php [L]
+</IfModule>
+
+# END WordPress
+
+
+# BEGIN DS-XML-RPC-API
+# The directives (lines) between "BEGIN DS-XML-RPC-API" and "END DS-XML-RPC-API" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<Files xmlrpc.php>
+order deny,allow
+deny from all
+
+</Files>
+
+# END DS-XML-RPC-API

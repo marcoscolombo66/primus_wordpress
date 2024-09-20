@@ -1,0 +1,414 @@
+/* .main-search {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+} */
+.primus-tracking-menu {
+    cursor: pointer;
+}
+#primus-tracking {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    transition: 0.4s;
+    z-index: 99999;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+#primus-tracking.visible {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn .55s ease-in both;
+}
+
+#primus-tracking.hide {
+  animation: fadeOut .55s ease-in both;
+}
+
+#primus-tracking input[type="text"], #primus-tracking .button {
+    box-sizing: border-box;
+    line-height: 1.8;
+    height: 3.5em;
+    padding: 0.75em;
+    font-size: 1.4rem;
+    float: left;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+#primus-tracking .button i {
+  line-height: 1.75em;
+}
+
+#primus-tracking input[type="text"] {
+    width: 96%;
+    width: calc(100% - 3.5em);
+    transition: 0.4s;
+    border-radius: 0px;
+}
+
+#primus-tracking [type="submit"] {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4.5em;
+    color: rgba(0, 0, 0, 0.35);
+    transition: 0.4s;
+}
+
+.button {
+    background: #707070;
+    display: inline-block;
+    padding: 0 1.25em;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 2.4;
+    border: 2px solid transparent;
+    font-family: "Lato", sans-serif;
+    transition: 0.4s;
+}
+
+.button.brand-1 {
+    background: #1795C5;
+}
+
+#primus-tracking input[type="text"], #primus-tracking .button {
+    line-height: 1.8;
+    height: 3.5em;
+    padding: 0.75em;
+    font-size: 1.4rem;
+    float: left;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+#primus-tracking .button {
+    width: 4%;
+    width: calc(3.5em - 0.0000001em);
+    text-align: center;
+}
+
+#primus-tracking form::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#primus-tracking-close-text {
+  display: none;
+}
+
+@keyframes fadeIn {
+	from {
+        opacity: 0;
+        visibility: hidden;
+		transform: translate3d(0, -100%, 0);
+	}
+	to {
+        opacity: 1;
+        visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+        opacity: 0;
+        visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+    z-index: -1;
+    
+	}
+}
+
+/* The Modal (background) */
+#primus-tracking-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 99999;
+  }
+  
+  /* Modal Content/Box */
+  #primus-tracking-modal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 40px 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  #primus-tracking-modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  #primus-tracking-modal .close:hover,
+  #primus-tracking-modal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /****/
+  #primus-tracking-modal-content {
+      position: relative;
+  }
+  .primus-tracking-modal-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+
+  #primus-tracking-modal .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  #primus-tracking-modal .info strong {
+      color: #4A6490;
+  }
+
+  #primus-tracking-modal .info-2 span ,
+  #primus-tracking-modal .info-3 span {
+    width: 50%;
+  }
+
+  #primus-tracking-modal h3 {
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 0;
+  }
+
+  .sk-folding-cube {
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+
+  .sk-folding-cube-inline {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .sk-folding-cube-small {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sk-folding-cube-white .sk-cube:not(.sk-cube2):before {
+    background-color: #f2f2f2 !important;
+}
+  
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1f3f7a;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+            animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+  .sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+            transform: scale(1.1) rotateZ(90deg);
+  }
+  .sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+            transform: scale(1.1) rotateZ(180deg);
+  }
+  .sk-folding-cube .sk-cube4 {
+      opacity: 0;
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+            transform: scale(1.1) rotateZ(270deg);
+  }
+  .sk-folding-cube .sk-cube2:before {
+     background: #47bbf7;
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+  }
+  .sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+  }
+  .sk-folding-cube .sk-cube4:before {
+      opacity: 0;
+    -webkit-animation-delay: 0.9s;
+            animation-delay: 0.9s;
+  }
+  @-webkit-keyframes sk-foldCubeAngle {
+    0%, 10% {
+  
+      opacity: 0;
+    } 25%, 75% {
+      -webkit-transform: perspective(140px) rotateX(0deg);
+              transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sk-foldCubeAngle {
+    0%, 10% {
+      opacity: 0;
+    } 25%, 75% {
+      -webkit-transform: perspective(140px) rotateX(0deg);
+              transform: perspective(140px) rotateX(0deg);
+      opacity: 1;
+    } 90%, 100% {
+      opacity: 0;
+    }
+  }
+
+  /**** table ****/
+  #primus-tracking-table-container {
+    overflow: auto;
+    display: block;
+  }
+  #primus-tracking-modal table thead {
+    background: #1795C5;
+  }
+  #primus-tracking-modal table thead th {
+    border-bottom: 2px solid #314B78;
+    color: white;
+        border: 1px solid #314B78;
+
+  }
+
+  #primus-tracking-modal tbody tr:nth-child(odd) {
+    background-color: #E1E7F2;
+}
+#primus-tracking-modal table tbody td {
+    border: 1px solid #314B78;
+    padding: 3px;
+    font-size:20px;
+    color:black;
+}
+
+table {
+    width:100%;
+    margin: 25px auto;
+    border-collapse: collapse;
+}
+
+ table th, table td {
+	 color: #999;
+	 padding: 12px 35px;
+	 border-collapse: collapse;
+}
+ table th {
+	 color: #fff;
+	 text-transform: uppercase;
+	 font-size: 12px;
+}
+ table th.last {
+	 border-right: none;
+}
+ 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+  #primus-tracking{
+      flex-flow: row wrap;
+      /* This aligns items to the end line on main-axis */
+      justify-content: flex-end;
+      height: 100%;
+      background: rgba(255,255,255,.9);
+      align-content: flex-start;
+  }
+
+  #primus-tracking input[type="text"], 
+  #primus-tracking input[type="password"], 
+  #primus-tracking .primus-tracking-label  {
+      width: 100%;
+  }
+
+  #primus-tracking .button.primus-tracking-close {
+      width: 100%;
+  }
+  #primus-tracking [type="submit"] {
+    top: 2em;
+    right: 1.5em;
+  }
+  #primus-tracking-close-text {
+      display: block;
+  }
+  #primus-tracking .button.primus-tracking-close i {
+    display: none;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media screen  and (orientation : landscape)  and (min-width: 481px) and (max-width: 767px) {
+  #primus-tracking{
+      flex-flow: row wrap;
+      /* This aligns items to the end line on main-axis */
+      justify-content: flex-end;
+      height: 100%;
+      background: rgba(255,255,255,.9);
+      align-content: flex-start;
+  }
+
+  #primus-tracking input[type="text"], 
+  #primus-tracking input[type="password"], 
+  #primus-tracking .primus-tracking-label {
+      width: 100%;
+  }
+
+  #primus-tracking .button.primus-tracking-close {
+      width: 100%;
+  }
+
+  #primus-tracking [type="submit"] {
+    top: 1.75em;
+    right: 1.5em;
+  }
+
+  #primus-tracking-close-text {
+      display: block;
+  }
+
+  #primus-tracking .button.primus-tracking-close i {
+    display: none;
+  }
+}

@@ -1,0 +1,190 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Obtener todos los elementos <a> con atributo data-value
+        var buttons = document.querySelectorAll('a[data-value]');
+
+        // Agregar un event listener para cada botón
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Obtener el valor del atributo data-value del botón
+                var value = parseInt(this.getAttribute('data-value'));
+
+                // Sumar el valor al total actual
+                var totalElement = document.querySelector('.total');
+                var currentTotal = parseInt(totalElement.textContent);
+                var newTotal = currentTotal + value;
+                totalElement.textContent = newTotal;
+				alert(newTotal);
+
+                // Agregar un nuevo elemento a la lista de elementos
+                var listElement = document.createElement('li');
+                listElement.innerHTML = '<strong><span class="apartados">' + value + '</span></strong> apartados <span class="pull-right"><span id="totalapartados">' + value + '</span>€</span>';
+                document.getElementById('elementos').appendChild(listElement);
+            });
+        });
+    });
+</script>
+
+
+<div class="row">
+		
+		
+		<div class="col-md-2 hidden-xs">
+			
+			<div class="panel panel-default affix-top" data-spy="affix" data-offset-top="400" id="menuer" data-offset-bottom="3200">
+				<div class="panel-body">
+					<ul style="font-size: 13px">
+						
+						<li><a href="#1"><strong>1</strong>. Apartados</a></li>
+						<li><a href="#2"><strong>2</strong>. Textos</a></li>
+						<li><a href="#3"><strong>3</strong>. Posicionamiento</a></li>
+						<li><a href="#4"><strong>4</strong>. Idiomas</a></li>
+						<li><a href="#5"><strong>5</strong>. Blog</a></li>
+						<li><a href="#6"><strong>6</strong>. Imágenes</a></li>
+						<li><a href="#7"><strong>7</strong>. Bases de datos</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-7 presu">
+			
+			<div class="panel panel-default" id="1">
+				<div class="panel-body">
+					<h5><span class="color-sitelabs">1.</span> Apartados (99€/página)</h5>
+					<p>Un apartado es una <strong>página interior dentro de la web</strong>, sea la portada, un subapartado dentro de una página de servicios, una página de contacto, etc. Cada uno está <strong>desarrollado a medida</strong> según los textos, imágenes, vídeos, etc. que contenga y debe presupuestarse individualmente.</p>
+					<div class="mb20">
+						<span data-toggle="modal" data-target="#myModal" style="    font-size: 11px;
+							color: #bababa;
+							cursor: pointer;
+							font-weight: 600;"><i class="fa fa-book" style="    font-size: 14px;
+							color: #00b9eb;
+						margin-right: 5px;"></i> Más información</span>
+					</div>
+					<a data-value="3" class="btn btn-default selected">3</a>
+					<a data-value="4" class="btn btn-default">4</a>
+					<a data-value="5" class="btn btn-default">5</a>
+					<a data-value="6" class="btn btn-default">6</a>
+					<a data-value="7" class="btn btn-default">7</a>
+					<a data-value="8" class="btn btn-default">8</a>
+					<a data-value="9" class="btn btn-default">9</a>
+					<a data-value="10" class="btn btn-default">10</a>
+					<a data-value="11" class="btn btn-default">11</a>
+					<a data-value="12" class="btn btn-default">12</a>
+				</div>
+			</div>
+			<div class="panel panel-default" id="2">
+				<div class="panel-body">
+					<h5><span class="color-sitelabs">2.</span> Textos de calidad</h5>
+					<p>Para que una web sirva para atraer nuevos clientes y sea una buena tarjeta de presentación para los ya existentes no sirven textos cualesquiera. Tienen que ser <strong>textos suficientemente extensos</strong> (entre 500 y 1.000 palabras por apartado como mínimo, dependiendo del sector), <strong>inéditos, relevantes</strong> (ofrecer lo que se busca) y <strong>útiles</strong>.</p>
+					<div class="mb20">
+						<span data-toggle="modal" data-target="#myModal2" style="    font-size: 11px;
+							color: #bababa;
+							cursor: pointer;
+							font-weight: 600;"><i class="fa fa-book" style="    font-size: 14px;
+							color: #00b9eb;
+						margin-right: 5px;"></i> Más información</span>
+					</div>
+					<a data-value="0" class="btn btn-default">No</a>
+					<a data-value="79" class="btn btn-default">Sí (79€/apartado)</a>
+				</div>
+			</div>
+			<div class="panel panel-default" id="3">
+				<div class="panel-body">
+					<h5><span class="color-sitelabs">3.</span> Posicionamiento en Google</h5>
+					<p>Si quieres que tu web sirva para atraer más clientes de los que ya tienes, necesitarás que los usuarios interesados en lo que ofreces la encuentren en Google. Para ello necesitarás el diseño e implementación en cada página de la web de las palabras clave más adecuadas por volumen de búsquedas y nivel de competencia, tras un <strong>estudio exhaustivo de tu sector en internet</strong>.</p>
+					<div class="mb20">
+						<span data-toggle="modal" data-target="#myModal3" style="    font-size: 11px;
+							color: #bababa;
+							cursor: pointer;
+							font-weight: 600;"><i class="fa fa-book" style="    font-size: 14px;
+							color: #00b9eb;
+						margin-right: 5px;"></i> Más información</span>
+					</div>
+					<a data-value="0" class="btn btn-default">No</a>
+					<a data-value="699" class="btn btn-default">Sí (699€)</a>
+				</div>
+			</div>
+			<div class="panel panel-default" id="4">
+				<div class="panel-body">
+					<h5><span class="color-sitelabs">4.</span> Idiomas adicionales</h5>
+					<p>Si te diriges a clientes de otros países, quizá te interese que tu página web esté en varios idiomas. Para ello, instalaremos y configuraremos la extensión multiidioma de WordPress, duplicaremos todas las páginas, <strong>traduciremos los contenidos</strong> y reconstruiremos los links internos de la página.</p>
+					<div class="mb20">
+						<span data-toggle="modal" data-target="#myModal4" style="    font-size: 11px;
+							color: #bababa;
+							cursor: pointer;
+							font-weight: 600;"><i class="fa fa-book" style="    font-size: 14px;
+							color: #00b9eb;
+						margin-right: 5px;"></i> Más información</span>
+					</div>
+					<a data-value="0" class="btn btn-default">1 idioma</a>
+					<a data-value="80" class="btn btn-default">2 idiomas</a>
+					<a data-value="160" class="btn btn-default">3 idiomas</a>
+				</div>
+			</div>
+			<div class="panel panel-default" id="5">
+				<div class="panel-body">
+					<h5><span class="color-sitelabs">5.</span> Blog o apartado de noticias</h5>
+					<p>Una empresa o profesional que genera posts periódicamente en su blog atraerá <strong>tráfico a su web de forma continuada</strong>, y eso indicará a Google que es un sitio interesante, algo que incidirá muy positivamente en su posicionamiento global, y por lo tanto en sus probabilidades de atraer clientes a sus productos y servicios y en su reputación en general.</p>
+					<div class="mb20">
+						<span data-toggle="modal" data-target="#myModal5" style="    font-size: 11px;
+							color: #bababa;
+							cursor: pointer;
+							font-weight: 600;"><i class="fa fa-book" style="    font-size: 14px;
+							color: #00b9eb;
+						margin-right: 5px;"></i> Más información</span>
+					</div>
+					<a data-value="0" class="btn btn-default">No</a>
+					<a data-value="199" class="btn btn-default">Sí (199€)</a>
+				</div>
+			</div>
+			<div class="panel panel-default" id="6">
+				<div class="panel-body">
+					<h5><span class="color-sitelabs">6.</span> Imágenes profesionales</h5>
+					<p>La efectividad de una web depende en un 50% de la confianza y la profesionalidad que inspiren sus imágenes, que son lo primero que llama la atención e <strong>inciden en la predisposición a la compra o petición de información</strong>. Por eso es importante que sean de calidad.</p>
+					<div class="mb20">
+						<span data-toggle="modal" data-target="#myModal6" style="    font-size: 11px;
+							color: #bababa;
+							cursor: pointer;
+							font-weight: 600;"><i class="fa fa-book" style="    font-size: 14px;
+							color: #00b9eb;
+						margin-right: 5px;"></i> Más información</span>
+					</div>
+					<a data-value="0" class="btn btn-default">No</a>
+					<a data-value="149" class="btn btn-default">Imágenes de stock (149€)</a>
+					<a data-value="399" class="btn btn-default">Sesión fotográfica (399€)</a>
+				</div>
+			</div>
+			<div class="panel panel-default" id="7">
+				<div class="panel-body">
+					<h5><span class="color-sitelabs">7.</span> Importación de base de datos web</h5>
+					<p>Si actualmente tienes una web y hay páginas, posts, datos de clientes, links, etc. que quieres que conserve tu nueva web, tendremos que <strong>hacer una exportación y volver a subir los datos de nuevo</strong>, además de <strong>redireccionar todas las URLs</strong> de la web anterior. Dependiendo del tipo de base de datos, el precio puede variar.</p>
+					<div class="mb20">
+						<span data-toggle="modal" data-target="#myModal7" style="    font-size: 11px;
+							color: #bababa;
+							cursor: pointer;
+							font-weight: 600;"><i class="fa fa-book" style="    font-size: 14px;
+							color: #00b9eb;
+						margin-right: 5px;"></i> Más información</span>
+					</div>
+					<a data-value="0" class="btn btn-default">No</a>
+					<a data-value="199" class="btn btn-default">Sí (199€)</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			
+			<div class="panel panel-default affix-top" data-spy="affix" data-offset-top="400" id="boxpres" data-offset-bottom="3200">
+				<div class="panel-body">
+					<!-- 					<h2 class="mt0 color-sitelabs" style="font-weight: 800"><span class="total">99</span>€</h2>
+					<hr> -->
+					<ul id="elementos">
+						
+					</ul>
+					<hr style="margin:10px 0">
+					<p style="font-size: 16px"><strong><span class="texttotal">Total</span><span class="preues"><span class="total">0</span>€</span></strong> </p><div class="visible-xs desglosar"><i class="fa fa-angle-up" style="margin-right: 5px"></i>Ver detalles</div><p></p>
+					<a data-toggle="modal" data-target="#myModal8" class="btn btn-block btn-win"><i class="fa fa-send" style="margin-right: 6px"></i> Enviar solicitud!<span class="hidden-xs" style="font-size: 8px; font-weight: 300"><br>Recibe este presupuesto sin compromiso</span></a>
+				<!-- 	<p style="text-align: right;font-size: 12px; margin-top: 10px; margin-bottom: 0" class="hidden-xs">¿Necesitas una tienda online?</p> -->
+				</div>
+			</div>
+		</div>
+	</div>

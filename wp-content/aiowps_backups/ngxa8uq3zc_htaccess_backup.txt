@@ -1,0 +1,35 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /v2/
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /v2/index.php [L]
+</IfModule>
+
+# END WordPress
+
+<Files wp-login.php>
+        order deny,allow
+        Deny from all
+  
+	# whitelist Galle's IP
+	allow from 190.189.17.32
+  
+	#whitelist some other user's IP Address
+	#allow from xx.xxx.xx.xx  
+</Files>
+
+# BEGIN DS-XML-RPC-API
+# The directives (lines) between "BEGIN DS-XML-RPC-API" and "END DS-XML-RPC-API" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<Files xmlrpc.php>
+order deny,allow
+deny from all
+
+</Files>
+# END DS-XML-RPC-API
+
